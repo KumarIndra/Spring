@@ -1,9 +1,9 @@
 package com.infy.controller;
 
+import org.infy.configuration.SpringConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.infy.configuration.SpringConfig;
 import com.infy.model.CustomerLogin;
 import com.infy.service.CustomerLoginService;
 import com.infy.service.CustomerLoginServiceImpl;
