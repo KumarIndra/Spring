@@ -4,15 +4,17 @@ import java.time.LocalDate;
 import org.infy.model.Policy;
 
 public class Validator {
-	public static void validate(Policy policy) throws Exception {
-		validatepolicyNumber(policy.getPolicyNumber(), policy.getPolicyType());
+	public static void validate(Policy policy) throws Exception  {
+		
+		
 		validatePolicyName(policy.getPolicyName());
 		validatePolicyType(policy.getPolicyType());
+		validatepolicyNumber(policy.getPolicyNumber(), policy.getPolicyType());
 		validatePremium(policy.getPremium());
 		validateTenure(policy.getTenureInMonths());
 		validateDateOfBirth(policy.getDateOfBirth());
 		validatePolicyHolderName(policy.getPolicyHolderName());
-	
+		
 	}
 	
 	public static Boolean validatePolicyName(String policyName) throws Exception {
@@ -56,11 +58,11 @@ public class Validator {
 	}
 	
 	public static Boolean validatepolicyNumber(String policyNumber,String policyType) throws Exception {
-		if(policyType.equals("Term Life Insurance") && policyNumber.matches("TL-[//d]{6}")) {
+		if(policyType.equals("Term Life Insurance") && policyNumber.matches("TL-[\\d]{6}")) {
 			return true;
-		}else if(policyType.equals("Whole Life Policy") && policyNumber.matches("WL-[//d]{6}")) {
+		}else if(policyType.equals("Whole Life Policy") && policyNumber.matches("WL-[\\d]{6}")) {
 			return true;
-		}else if(policyType.equals("Endowment Plans") && policyNumber.matches("EP-[//d]{6}")) {
+		}else if(policyType.equals("Endowment Plans") && policyNumber.matches("EP-[\\d]{6}")) {
 			return true;
 		}else {
 			throw new Exception("validator.INVALID_POLICY_NUMBER");
@@ -68,7 +70,7 @@ public class Validator {
 	}
 	
 	public static Boolean validatePolicyHolderName(String policyholderName) throws Exception {
-		if(policyholderName.matches("([//w]{3,}\\s?)+")) {
+		if(policyholderName.matches("([\\w]{3,}\\s?)+")) {
 			return true;
 		}else {
 			throw new Exception("validator.INVALID_POLICY_HOLDER_NAME");
