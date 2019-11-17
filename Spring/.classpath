@@ -11,6 +11,7 @@
 	<classpathentry kind="src" path="autowiringExercise"/>
 	<classpathentry kind="src" path="springIOCContainer"/>
 	<classpathentry kind="src" path="insuranceCompany"/>
+	<classpathentry kind="src" path="autowiringExercise2"/>
 	<classpathentry kind="lib" path="/Users/mac/Desktop/workspace/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="/Users/mac/Downloads/commons-logging-1.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
